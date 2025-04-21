@@ -65,7 +65,7 @@ class Customer {
         $this->avt_img = htmlspecialchars(strip_tags($this->avt_img));
         $this->csv = htmlspecialchars(strip_tags($this->csv));
         $this->Balance = htmlspecialchars(strip_tags($this->Balance)); // or just floatval
-        $this->PaymentMethod = htmlspecialchars(strip_tags($this->PaymentMethod));
+        $this->PaymentMethod = "CreditCard";
 
         $stmt->bindParam(":Name", $this->Name);
         $stmt->bindParam(":email", $this->Email);

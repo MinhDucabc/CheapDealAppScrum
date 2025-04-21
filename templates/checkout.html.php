@@ -76,7 +76,7 @@
         </div>
 
         <!-- Special Offers and Payment Method -->
-        <form method="POST" action="checkout.php?deal_id=<?= $deal_id ?>" id="checkout-form">
+        <form method="POST" action="checkout.php" id="checkout-form">
             <div class="mt-6">
                 <h2 class="text-lg font-semibold mb-2">Apply Additional Discounts</h2>
                 <div class="mb-4">
@@ -136,7 +136,7 @@
             <!-- Buttons -->
             <div class="mt-4 flex justify-between">
                 <a href="deal-details.php?deal_id=<?= $deal_id ?>" class="text-blue-600 font-medium">Back to Deal Details</a>
-                <button type="submit" name="checkout" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Place Order</button>
+                <button type="submit" formaction="confirm_checkout.php" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Place Order</button>
             </div>
         </form>
     <?php else: ?>

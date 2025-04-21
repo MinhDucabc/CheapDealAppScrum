@@ -1,4 +1,3 @@
-
 <div class="max-w-md mx-auto">
     <!-- Header with gradient background -->
     <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 text-center relative">
@@ -12,20 +11,22 @@
     </div>
 
     <div class="p-6 pt-0">
+
+
         <!-- Registration Form -->
-    <form action="../authentication/register.php" method="POST" id="registerForm">
-        <!-- Personal Information -->
-        <div class="mb-6">
-            <!-- Icon -->
-            <div class="flex justify-center mb-4">
-                <div class="bg-blue-500 rounded-full p-3 w-12 h-12 flex items-center justify-center">
-                    <i class="fas fa-user text-white text-xl"></i>
+        <form action="register.php" method="POST" id="registerForm">
+            <!-- Personal Information -->
+            <div class="mb-6">
+                <!-- Icon -->
+                <div class="flex justify-center mb-4">
+                    <div class="bg-blue-500 rounded-full p-3 w-12 h-12 flex items-center justify-center">
+                        <i class="fas fa-user text-white text-xl"></i>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Title -->
-            <h2 class="text-center text-xl font-semibold text-blue-500 mb-1">Create Your Account</h2>
-            <p class="text-center text-gray-500 text-sm mb-6">Fill in all the details below</p>
+                
+                <!-- Title -->
+                <h2 class="text-center text-xl font-semibold text-blue-500 mb-1">Create Your Account</h2>
+                <p class="text-center text-gray-500 text-sm mb-6">Fill in all the details below</p>
                 
                 <!-- Name Input -->
                 <div class="mb-4">
@@ -33,7 +34,7 @@
                     <div class="flex items-center px-3 py-2 bg-gray-100 rounded-md">
                         <i class="fas fa-user text-gray-400 mr-2"></i>
                         <input type="text" name="name" placeholder="Full Name" required 
-                            class="w-full bg-gray-100 outline-none text-gray-700">
+                            class="w-full bg-gray-100 outline-none text-gray-700" value="<?= isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '' ?>">
                     </div>
                 </div>
                 
@@ -43,7 +44,7 @@
                     <div class="flex items-center px-3 py-2 bg-gray-100 rounded-md">
                         <i class="fas fa-envelope text-gray-400 mr-2"></i>
                         <input type="email" name="email" placeholder="Email address" required 
-                            class="w-full bg-gray-100 outline-none text-gray-700">
+                            class="w-full bg-gray-100 outline-none text-gray-700" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>">
                     </div>
                 </div>
                 
@@ -53,7 +54,7 @@
                     <div class="flex items-center px-3 py-2 bg-gray-100 rounded-md">
                         <i class="fas fa-credit-card text-gray-400 mr-2"></i>
                         <input type="text" name="credit_card" placeholder="Card number" required 
-                            class="w-full bg-gray-100 outline-none text-gray-700">
+                            class="w-full bg-gray-100 outline-none text-gray-700" value="<?= isset($_POST['credit_card']) ? htmlspecialchars($_POST['credit_card']) : '' ?>">
                     </div>
                 </div>
                 
@@ -63,7 +64,7 @@
                     <div class="flex items-center px-3 py-2 bg-gray-100 rounded-md">
                         <i class="fas fa-phone text-gray-400 mr-2"></i>
                         <input type="tel" name="phone" placeholder="Enter your phone number" required 
-                            class="w-full bg-gray-100 outline-none text-gray-700">
+                            class="w-full bg-gray-100 outline-none text-gray-700" value="<?= isset($_POST['phone']) ? htmlspecialchars($_POST['phone']) : '' ?>">
                     </div>
                 </div>
                 
@@ -73,7 +74,7 @@
                     <div class="flex items-center px-3 py-2 bg-gray-100 rounded-md">
                         <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
                         <input type="text" name="address" placeholder="Enter your address" required 
-                            class="w-full bg-gray-100 outline-none text-gray-700">
+                            class="w-full bg-gray-100 outline-none text-gray-700" value="<?= isset($_POST['address']) ? htmlspecialchars($_POST['address']) : '' ?>">
                     </div>
                 </div>
                 
@@ -101,11 +102,18 @@
                 <!-- Terms Checkbox -->
                 <div class="mb-6">
                     <label class="flex items-center">
-                        <input type="checkbox" name="terms" required class="mr-2">
+                        <input type="checkbox" name="terms" required class="mr-2" <?= isset($_POST['terms']) && $_POST['terms'] === 'on' ? 'checked' : '' ?>>
                         <span class="text-sm text-gray-600">I agree to the <a href="#" class="text-blue-500">Terms of Service</a> and <a href="#" class="text-blue-500">Privacy Policy</a></span>
                     </label>
                 </div>
             </div>
+
+            <!-- Error Display -->
+            <?php if (isset($error)): ?>
+                <div class="bg-red-100 text-red-700 p-2 text-center rounded mb-4">
+                    <?= htmlspecialchars($error) ?>
+                </div>
+            <?php endif; ?>
             
             <!-- Submit Button -->
             <button type="submit" class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md font-medium">
@@ -117,10 +125,5 @@
         <div class="text-center mt-6">
             <p class="text-gray-600 text-sm">Already have an account? <a href="login.php" class="text-blue-500 font-medium">Login</a></p>
         </div>
-        <?php if (isset($_GET['error'])): ?>
-            <div class="bg-red-100 text-red-700 p-2 text-center rounded mb-4">
-                <?= htmlspecialchars($_GET['error']) ?>
-            </div>
-        <?php endif; ?>
     </div>
 </div>

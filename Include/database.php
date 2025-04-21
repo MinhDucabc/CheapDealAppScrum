@@ -18,6 +18,5 @@ try {
 
 // Hiển thị thông báo kết nối
 if (isset($output)) {
-    echo $output;
 }
 ?>

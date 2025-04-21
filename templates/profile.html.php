@@ -1,6 +1,4 @@
 <?php
-// templates/profile.html.php
-
 // Check if edit mode is enabled
 $edit_mode = isset($_GET['edit']) && $_GET['edit'] === 'true';
 $password_mode = isset($_GET['password']) && $_GET['password'] === 'true';
@@ -24,8 +22,8 @@ $password_mode = isset($_GET['password']) && $_GET['password'] === 'true';
     <?php if (!$edit_mode && !$password_mode): ?>
         <div class="bg-white p-6 rounded-lg shadow">
             <div class="flex flex-col items-center mb-4">
-                <img src="<?php echo htmlspecialchars($customer->avt_img ?: '../image/default-avatar.png'); ?>" alt="Profile Picture" class="w-24 h-24 rounded-full mb-2">
-                <p class="text-gray-600 font-semibold">Balance: <?php echo $customer->Balance?></p>
+                <img src="<?php echo htmlspecialchars($customer->avt_img ?: './image/default-avatar.png'); ?>" alt="Profile Picture" class="w-24 h-24 rounded-full mb-2">
+                <p class="text-gray-600 font-semibold">Balance: <?php echo htmlspecialchars($customer->Balance); ?></p>
             </div>
             <div class="space-y-4">
                 <div>
@@ -46,15 +44,15 @@ $password_mode = isset($_GET['password']) && $_GET['password'] === 'true';
                 </div>
                 <div>
                     <label for="credit_card" class="block text-gray-700 font-medium mb-1">Credit Card Number:</label>
-                    <input type="text" id="credit_card" value="<?php echo htmlspecialchars(str_repeat('*', strlen($customer->CreditCardInfo) - 4) . substr($customer->CreditCardInfo, -4)); ?>" disabled class="w-full p-2 border rounded bg-gray-100">
+                    <input type="text" id="credit_card" value="<?php echo htmlspecialchars($customer->CreditCardInfo ? '**** **** **** ' . substr($customer->CreditCardInfo, -4) : 'Not set'); ?>" disabled class="w-full p-2 border rounded bg-gray-100">
                 </div>
                 <div>
                     <label for="csv" class="block text-gray-700 font-medium mb-1">CSV:</label>
-                    <input type="text" id="csv" value="<?php echo htmlspecialchars(str_repeat('*', strlen($customer->csv))); ?>" disabled class="w-full p-2 border rounded bg-gray-100">
+                    <input type="text" id="csv" value="<?php echo htmlspecialchars($customer->csv ? '***' : 'Not set'); ?>" disabled class="w-full p-2 border rounded bg-gray-100">
                 </div>
                 <div>
                     <label for="password" class="block text-gray-700 font-medium mb-1">Password:</label>
-                    <input type="text" id="password" value="********" disabled class="w-full p-2 border rounded bg-gray-100">
+                    <input type="text" id="password" value="************" disabled class="w-full p-2 border rounded bg-gray-100">
                 </div>
             </div>
             <div class="mt-4">
@@ -75,6 +73,7 @@ $password_mode = isset($_GET['password']) && $_GET['password'] === 'true';
                 <div>
                     <label for="new_password" class="block text-gray-700 font-medium mb-1">New Password:</label>
                     <input type="password" name="new_password" id="new_password" required class="w-full p-2 border rounded">
+                    <p class="text-xs text-gray-600 mt-1">Password must be at least 8 characters with letters and numbers.</p>
                 </div>
                 <div>
                     <label for="confirm_password" class="block text-gray-700 font-medium mb-1">Confirm Password:</label>
@@ -107,18 +106,19 @@ $password_mode = isset($_GET['password']) && $_GET['password'] === 'true';
                 </div>
                 <div>
                     <label for="credit_card" class="block text-gray-700 font-medium mb-1">Credit Card Number:</label>
-                    <input type="text" name="credit_card" id="credit_card" value="<?php echo htmlspecialchars(str_repeat('*', strlen($customer->CreditCardInfo) - 4) . substr($customer->CreditCardInfo, -4)); ?>" class="w-full p-2 border rounded">
+                    <input type="text" name="credit_card" id="credit_card" class="w-full p-2 border rounded" value="<?php echo $customer->CreditCardInfo ?>">
                 </div>
                 <div>
                     <label for="csv" class="block text-gray-700 font-medium mb-1">CSV:</label>
-                    <input type="text" name="csv" id="csv" value="<?php echo htmlspecialchars(str_repeat('*', strlen($customer->csv))); ?>" class="w-full p-2 border rounded">
+                    <input type="text" name="csv" id="csv" class="w-full p-2 border rounded" value="<?php echo $customer->csv?>">
                 </div>
                 <div>
                     <label for="avt_img" class="block text-gray-700 font-medium mb-1">Profile Picture:</label>
                     <div class="flex items-center space-x-4">
-                        <img src="<?php echo htmlspecialchars($customer->avt_img ?: '../image/default-avatar.png'); ?>" alt="Profile Picture" class="w-16 h-16 rounded-full">
-                        <input type="file" name="avt_img" id="avt_img" accept="image/*" class="w-full p-2 border rounded">
+                        <img src="<?php echo htmlspecialchars($customer->avt_img ?: './image/default-avatar.png'); ?>" alt="Profile Picture" class="w-16 h-16 rounded-full">
+                        <input type="file" name="avt_img" id="avt_img" accept="image/jpeg,image/png,image/gif" class="w-full p-2 border rounded">
                     </div>
+                    <p class="text-xs text-gray-600 mt-1">Supported formats: JPEG, PNG, GIF. Max size: 2MB.</p>
                 </div>
                 <button type="submit" name="update_profile" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600">Save Changes</button>
                 <a href="profile.php" class="w-full bg-gray-500 text-white py-2 rounded-lg text-center block mt-2 hover:bg-gray-600">Cancel</a>
@@ -127,6 +127,6 @@ $password_mode = isset($_GET['password']) && $_GET['password'] === 'true';
     <?php endif; ?>
 
     <div class="mt-4 text-center">
-        <a href="logout.php" class="w-full bg-red-500 text-white py-2 rounded-lg text-center block hover:bg-gray-600">Logout</a>
+        <a href="logout.php" class="w-full bg-red-500 text-white py-2 rounded-lg text-center block hover:bg-red-600">Logout</a>
     </div>
 </main>

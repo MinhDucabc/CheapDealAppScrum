@@ -1,6 +1,6 @@
 <?php
-require_once "../Include/database.php";
-require_once "../models/Package.php";
+require_once "./Include/database.php";
+require_once "./models/Package.php";
 session_start();
 
 // Initialize variables
@@ -330,5 +330,5 @@ try {
 ob_start();
 include "./templates/csr_management.html.php";
 $page_content = ob_get_clean();
-include '../layout-mobile.html.php';
+include './layout-mobile.html.php';
 ?>

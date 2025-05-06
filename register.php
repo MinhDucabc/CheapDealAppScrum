@@ -1,18 +1,18 @@
 <?php
 // Include database configuration
-include '../Include/database.php';
+include './Include/database.php';
 
 // Include model files
-include '../models/Customer.php';
+include './models/Customer.php';
 
 // Instantiate customer model
 $customer = new Customer($pdo);
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     ob_start();
-    include '../templates/register.html.php';
+    include './templates/register.html.php';
     $page_content = ob_get_clean();
-    include '../layout-mobile.html.php';
+    include './layout-mobile.html.php';
     exit;
 }
 
@@ -22,9 +22,9 @@ foreach ($required as $field) {
     if (empty($_POST[$field])) {
         $error = "All fields are required, including agreeing to the terms.";
         ob_start();
-        include '../templates/register.html.php';
+        include './templates/register.html.php';
         $page_content = ob_get_clean();
-        include '../layout-mobile.html.php';
+        include './layout-mobile.html.php';
         exit;
     }
 }
@@ -43,9 +43,9 @@ $terms = $_POST['terms'];
 if ($password !== $confirm_password) {
     $error = "Passwords do not match.";
     ob_start();
-    include '../templates/register.html.php';
+    include './templates/register.html.php';
     $page_content = ob_get_clean();
-    include '../layout-mobile.html.php';
+    include './layout-mobile.html.php';
     exit;
 }
 
@@ -53,9 +53,9 @@ if ($password !== $confirm_password) {
 if (strlen($password) < 8 || !preg_match("/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/", $password)) {
     $error = "Password must be at least 8 characters and contain both letters and numbers.";
     ob_start();
-    include '../templates/register.html.php';
+    include './templates/register.html.php';
     $page_content = ob_get_clean();
-    include '../layout-mobile.html.php';
+    include './layout-mobile.html.php';
     exit;
 }
 
@@ -63,9 +63,9 @@ if (strlen($password) < 8 || !preg_match("/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/", $p
 if ($customer->emailExists()) {
     $error = "Email already registered.";
     ob_start();
-    include '../templates/register.html.php';
+    include './templates/register.html.php';
     $page_content = ob_get_clean();
-    include '../layout-mobile.html.php';
+    include './layout-mobile.html.php';
     exit;
 }
 
@@ -73,9 +73,9 @@ if ($customer->emailExists()) {
 if (!preg_match("/^\d{16}$/", $credit_card)) {
     $error = "Invalid credit card number. Must be 16 digits.";
     ob_start();
-    include '../templates/register.html.php';
+    include './templates/register.html.php';
     $page_content = ob_get_clean();
-    include '../layout-mobile.html.php';
+    include './layout-mobile.html.php';
     exit;
 }
 
@@ -83,9 +83,9 @@ if (!preg_match("/^\d{16}$/", $credit_card)) {
 if ($terms !== 'on') {
     $error = "You must agree to the Terms of Service and Privacy Policy.";
     ob_start();
-    include '../templates/register.html.php';
+    include './templates/register.html.php';
     $page_content = ob_get_clean();
-    include '../layout-mobile.html.php';
+    include './layout-mobile.html.php';
     exit;
 }
 
@@ -102,8 +102,8 @@ if ($customer->create()) {
 
 $error = "Registration failed. Please try again.";
 ob_start();
-include '../templates/register.html.php';
+include './templates/register.html.php';
 $page_content = ob_get_clean();
-include '../layout-mobile.html.php';
+include './layout-mobile.html.php';
 exit;
 ?>

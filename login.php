@@ -4,17 +4,17 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Include database configuration
-include '../Include/database.php';
+include './Include/database.php';
 
 // Include model files
-include '../models/Customer.php';
+include './models/Customer.php';
 
 // Start session
 session_start();
 
 // Redirect if already logged in
 if (isset($_SESSION['customer_id']) && $_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../homepages.php");
+    header("Location: ./homepages.php");
     exit;
 }
 
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 // Check for redirect after login
                 $redirect = isset($_POST['redirect']) ? $_POST['redirect'] : 'homepages';
                 $redirectUrl = $redirect === 'checkout' ? 'checkout.php' : ($redirect === 'profile' ? 'profile.php' : 'homepages.php');
-                header("Location: ../$redirectUrl");
+                header("Location: ./$redirectUrl");
                 exit;
             } else {
                 $error = "Invalid email or password.";
@@ -52,9 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 // For GET requests or POST errors, render the login page
 ob_start();
-include '../templates/login.html.php';
+include './templates/login.html.php';
 $page_content = ob_get_clean();
 
 // Render it inside the mobile layout
-include '../layout-mobile.html.php';
+include './layout-mobile.html.php';
 ?>

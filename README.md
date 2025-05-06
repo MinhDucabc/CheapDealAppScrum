@@ -55,6 +55,9 @@ Open **XAMPP**, then:
 - Click **Admin** to open the database interface  
   ![Apache Admin](readme_assets/image-3.png)
 
+- Once in DataBase Interface, Click on **Import** and choose the **cheapdeals_scrum.sql** file to load the whole database
+  ![image](https://github.com/user-attachments/assets/2c63d69c-6c1b-45fc-89c6-ea0db3310ada)
+  ![image](https://github.com/user-attachments/assets/9bea143c-7f5f-464a-be11-206d5cc3eb20)
 
 ---
 

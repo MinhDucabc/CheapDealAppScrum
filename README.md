@@ -42,50 +42,74 @@ cd /path-to-xampp/htdocs
 
 # Clone this repository
 git clone https://github.com/MinhDucabc/CheapDealAppScrum.git
+```
 
-3. Start MySQL Server
-Open XAMPP
+### 3. Start MySQL Server
 
-Click Start on the MySQL module
-![alt text](readme_assets/image.png)
+Open **XAMPP**, then:
 
-Click Admin to open the database interface
-![alt text](readme_assets/image-1.png)
+- Click **Start** on the **MySQL** module  
+  ![MySQL Start](readme_assets/image.png)
 
-4. Start Apache Server
-In XAMPP, click Start on the Apache module
-![alt text](readme_assets/image-2.png)
+- Click **Admin** to open the database interface  
+  ![MySQL Admin](readme_assets/image-1.png)
 
-Click Admin to launch the browser and preview the project by accessing the cloned CheapDealAppScrum folder
-![alt text](readme_assets/image-3.png)
+---
+
+### 4. Start Apache Server
+
+- In **XAMPP**, click **Start** on the **Apache** module  
+  ![Apache Start](readme_assets/image-2.png)
+
+- Click **Admin** to launch the browser and preview the project by accessing the cloned `CheapDealAppScrum` folder  
+  ![Apache Admin](readme_assets/image-3.png)
+
+---
+
+## ❓ FAQ
+
+**Q: Why does the browser show `Undefined variable $pdo in C:...`?**  
+**A:** You must start the **MySQL Server** in XAMPP **before** loading the application in the browser to ensure database connectivity.
+
+![PDO Error Example 1](readme_assets/image-3.png)  
+![PDO Error Example 2](readme_assets/image-4.png)
+
+---
+
+## 💻 Technology Stack
+
+- **Frontend:** HTML, CSS, JavaScript, TailwindCSS  
+- **Backend:** PHP  
+- **Database:** MySQL  
+- **Collaboration Tool:** Git  
+
+---
+
+## 🖼️ Screenshots
+
+### 🔐 Login & Signup Pages
+![Login Page](readme_assets/login.png)
+![SignUp Page](readme_assets/signup.png)
+
+### 👤 Profile Page
+![Profile Page](readme_assets/profile.png)
+
+### 🏠 Homepage
+![HomePage](readme_assets/homepage.png)
+![HomePage](readme_assets/homepage1png)
+
+### 📦 Package Pages
+![Packages](readme_assets/packages.png)  
+![Packages](readme_assets/packages1.png)  
 
 
-❓ FAQ
-Q: Why does the browser show Undefined variable $pdo in C:...?
-A: You must start the MySQL Server in XAMPP before loading the application in the browser to ensure database connectivity.
-![alt text](readme_assets/image-3.png)
-![alt text](readme_assets/image-4.png)
+### 📦 Package Detail / 💼 Deal Detail
+![Package Details](readme_assets/package-details.png)
+![Deal Details](readme_assets/deal-details.png)
 
-💻 Technology Stack
-Frontend: HTML, CSS, JavaScript, TailwindCSS
+### 🛒 Cart & Checkout
+![Cart](readme_assets/cart.png)  
+![Checkout](readme_assets/checkout.png)
 
-Backend: PHP
-
-Database: MySQL
-
-Collaboration Tool: Git
-
-🖼️ Screenshots
-🔐 Login & Signup Pages
-
-👤 Profile Page
-
-🏠 Homepage
-
-📦 Package & Deal Pages
-
-
-🛒 Cart & Checkout
-
-
-🗂️ Database Design
+### 🗂️ Database Design
+![Database Design](readme_assets/database-design.png)

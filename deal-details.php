@@ -10,19 +10,12 @@ $packageModel = new Package($pdo);
 
 $deal_id = isset($_GET['deal_id']) ? (int)$_GET['deal_id'] : 0;
 
-if ($deal_id <= 0) {
-    header("Location: offers.php?status=invalid_deal");
-    exit;
-}
 
 // Fetch deal details
 $dealModel->DealID = $deal_id;
 $dealModel->readOne();
 
-if (!$dealModel->DealName) {
-    header("Location: offers.php?status=deal_not_found");
-    exit;
-}
+
 
 // Fetch packages for the deal
 $deal_packages_stmt = $dealModel->getDealPackages();

@@ -2,7 +2,7 @@
 $servername = 'localhost';
 $username = 'root';
 $password = '';
-$dbname = 'coursework_scrum';
+$dbname = 'cheapdeals_scrum';
 
 try {
     // Thiết lập kết nối PDO với chế độ lỗi là Exception và mã hóa UTF-8

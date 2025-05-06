@@ -49,7 +49,7 @@
                                 <p class="text-gray-600 text-sm mb-4 line-clamp-2"><?= htmlspecialchars($package['Description']) ?></p>
                                 <div class="flex justify-between items-center">
                                     <span class="text-xl font-bold text-blue-600">£<?= number_format($package['Price'], 2) ?>/mo</span>
-                                    <a href="package_details.php?id=<?= $package['PackageID'] ?>" 
+                                    <a href="package-details.php?id=<?= $package['PackageID'] ?>" 
                                         class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition text-sm">
                                         View Details
                                     </a>
@@ -81,7 +81,7 @@
                                     <?= htmlspecialchars($deal['ValidFrom']) ?> → <?= htmlspecialchars($deal['ValidTo']) ?>
                                 </p>
                                 <div class="flex justify-end">
-                                    <a href="deal-details.php?id=<?= $deal['DealID'] ?>" 
+                                    <a href="deal-details.php?deal_id=<?= $deal['DealID'] ?>" 
                                         class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition text-sm">
                                         View Deal
                                     </a>

@@ -49,20 +49,22 @@ git clone https://github.com/MinhDucabc/CheapDealAppScrum.git
 Open **XAMPP**, then:
 
 - Click **Start** on the **MySQL** module  
-  ![MySQL Start](readme_assets/image.png)
+  ![Apache Start](readme_assets/image-2.png)
+
 
 - Click **Admin** to open the database interface  
-  ![MySQL Admin](readme_assets/image-1.png)
+  ![Apache Admin](readme_assets/image-3.png)
+
 
 ---
 
 ### 4. Start Apache Server
 
-- In **XAMPP**, click **Start** on the **Apache** module  
-  ![Apache Start](readme_assets/image-2.png)
+- In **XAMPP**, click **Start** on the **Apache** module
+- ![MySQL Start](readme_assets/image.png)
 
 - Click **Admin** to launch the browser and preview the project by accessing the cloned `CheapDealAppScrum` folder  
-  ![Apache Admin](readme_assets/image-3.png)
+- ![MySQL Admin](readme_assets/image-1.png)
 
 ---
 

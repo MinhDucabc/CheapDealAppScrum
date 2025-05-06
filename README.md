@@ -93,28 +93,55 @@ Open **XAMPP**, then:
 ## 🖼️ Screenshots
 
 ### 🔐 Login & Signup Pages
-![Login Page](readme_assets/login.png)
-![SignUp Page](readme_assets/signup.png)
+- **Login Page:** Allows registered users to sign into their accounts.  
+  ![Login Page](readme_assets/login.png)
+
+- **Sign Up Page:** New users can register by providing their personal and payment information.  
+  ![SignUp Page](readme_assets/signup.png)
+
+---
 
 ### 👤 Profile Page
-![Profile Page](readme_assets/profile.png)
+- View and edit user details such as name, email, address, and credit card info.  
+  ![Profile Page](readme_assets/profile.png)
+
+---
 
 ### 🏠 Homepage
-![HomePage](readme_assets/homepage.png)
-![HomePage](readme_assets/homepage1png)
+- Dashboard view displaying available packages, deals, and quick navigation.  
+  ![HomePage](readme_assets/homepage.png)
+- Additional view showcasing dynamic content or featured promotions.  
+  ![HomePage](readme_assets/homepage1.png)
+
+---
 
 ### 📦 Package Pages
-![Packages](readme_assets/packages.png)  
-![Packages](readme_assets/packages1.png)  
+- Browse all available packages: MobileOnly, TabletOnly, BroadbandOnly, and custom deals.  
+  ![Packages](readme_assets/packages.png)
+- Additional layout for package selection or filtering options.  
+  ![Packages](readme_assets/packages1.png)
 
+---
 
 ### 📦 Package Detail / 💼 Deal Detail
-![Package Details](readme_assets/package-details.png)
-![Deal Details](readme_assets/deal-details.png)
+- Detailed view of a selected package, showing included features and pricing.  
+  ![Package Details](readme_assets/package-details.png)
+
+- Detailed view of a selected deal, including bunch of specific packages with discount.  
+  ![Deal Details](readme_assets/deal-details.png)
+
+---
 
 ### 🛒 Cart & Checkout
-![Cart](readme_assets/cart.png)  
-![Checkout](readme_assets/checkout.png)
+- Cart displays selected packages, quantities, and running total.  
+  ![Cart](readme_assets/cart.png)
+
+- Final checkout screen for order review and credit card payment.  
+  ![Checkout](readme_assets/checkout.png)
+
+---
 
 ### 🗂️ Database Design
-![Database Design](readme_assets/database-design.png)
+- ERD (Entity Relationship Diagram) showing how customer, package, order, CSR data and much more are related in the system.  
+  ![Database Design](readme_assets/database-design.png)
+
